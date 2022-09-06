@@ -1,15 +1,34 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $header-level;
+  padding: 10px 0;
+
   .col-sm-4 {
     @include flex-box($jc: between);
-    gap: 0 10px;
   }
 
   .logo {
     flex-grow: 1;
+    text-transform: uppercase;
+    font: 400 24px/1 $serif;
+    color: #fff;
   }
 
   button {
-    width: 24px;
-    height: 24px;
+    color: #fff;
+
+    &.btn-search {
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+    }
+
+    &.btn-menu {
+      width: 26px;
+      height: 26px;
+    }
   }
 }
