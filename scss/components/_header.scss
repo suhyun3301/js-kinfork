@@ -1,0 +1,15 @@
+.header {
+  .col-sm-4 {
+    @include flex-box($jc: between);
+    gap: 0 10px;
+  }
+
+  .logo {
+    flex-grow: 1;
+  }
+
+  button {
+    width: 24px;
+    height: 24px;
+  }
+}

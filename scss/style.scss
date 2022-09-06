@@ -2,4 +2,8 @@
 @import './base/font';
 @import './base/reset';
 
+@import './mixins/flex-box';
+
 @import './foundation/layouts';
+
+@import './components/header';
