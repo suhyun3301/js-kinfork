@@ -1,9 +1,13 @@
 @import './base/normalize';
 @import './base/font';
 @import './base/reset';
+@import './base/grid';
+@import './base/z-index';
 
 @import './mixins/flex-box';
-
-@import './foundation/layouts';
+@import './mixins/object-fit';
+@import './mixins/typo';
+@import './mixins/absolute';
 
 @import './components/header';
+@import './layouts/main';
