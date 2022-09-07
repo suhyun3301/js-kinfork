@@ -1,13 +1,19 @@
 .box {
   margin-bottom: 80px;
 
-  .title-box {
-    h1 {
-      font: 400 48px/1.2 $serif;
-    }
+  .title {
+    font: 400 48px/1.2 $serif;
+  }
 
-    p {
-      font: 400 15px/1.4 $sans-serif;
+  .title-desc {
+    font: 400 15px/1.4 $sans-serif;
+  }
+
+  @include responsive(T) {
+    .title-box {
+      h1 {
+        font-size: 56px;
+      }
     }
   }
 }

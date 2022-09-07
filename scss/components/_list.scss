@@ -9,6 +9,7 @@
     a {
       display: block;
       @include flex-box($jc: start, $ai: start);
+      flex-wrap: wrap;
       gap: 0 16px;
     }
 
@@ -30,6 +31,24 @@
 
       p {
         font: 400 14px/1 $sans-serif;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    @include flex-box($ai: start);
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .item {
+      width: calc(50% - 10px);
+      flex-shrink: 0;
+
+      a {
+        .img-box {
+          width: 100%;
+          margin-bottom: 4px;
+        }
       }
     }
   }

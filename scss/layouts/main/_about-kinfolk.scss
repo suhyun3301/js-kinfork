@@ -43,4 +43,20 @@
       }
     }
   }
+
+  @include responsive(T) {
+    .container {
+      .row {
+        align-items: baseline;
+      }
+    }
+
+    .title-desc {
+      padding-right: 40px;
+    }
+
+    .member-box {
+      margin-top: 0;
+    }
+  }
 }

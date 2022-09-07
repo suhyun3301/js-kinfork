@@ -18,4 +18,17 @@
     background-position: center center;
     order: 1;
   }
+
+  @include responsive(T) {
+    .title-box {
+      width: 50%;
+      padding: 24px $md-margin + $gutter / 2 64px;
+      order: 1;
+    }
+
+    .img-box {
+      width: 50%;
+      order: 2;
+    }
+  }
 }

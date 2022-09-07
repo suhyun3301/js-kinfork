@@ -5,7 +5,7 @@
       margin-bottom: 12px;
     }
 
-    p {
+    .title-desc {
       margin-bottom: 40px;
     }
   }
@@ -22,7 +22,6 @@
   .category-box {
     background-color: #e4d9c5;
     padding: 32px 32px 40px;
-    margin-bottom: 120px;
 
     h2 {
       font: 400 28px/1 $serif;
@@ -43,6 +42,26 @@
           font: 400 18px/1 $serif;
           text-transform: capitalize;
         }
+      }
+    }
+  }
+
+  .slide-box {
+    margin-top: 120px;
+  }
+
+  @include responsive(T) {
+    .img-box {
+      height: 100%;
+    }
+
+    .category-box {
+      margin-left: -20px;
+      height: 100%;
+      padding: 64px 40px;
+
+      h2 {
+        margin-bottom: 32px;
       }
     }
   }

@@ -15,7 +15,7 @@
     }
 
     p {
-      font: 400 50px/1 $serif;
+      font: 400 50px/1.2 $serif;
     }
   }
 
@@ -29,6 +29,16 @@
 
     .video-pc {
       display: none;
+    }
+  }
+
+  @include responsive(T) {
+    .text-box {
+      left: 8%;
+
+      p {
+        font-size: 72px;
+      }
     }
   }
 }
