@@ -11,9 +11,16 @@
 
 @import './components/header';
 @import './components/footer';
-@import './components/box';
 @import './components/list';
 @import './components/slide-card-box';
 @import './components/slide-box';
 
-@import './layouts/main';
+@import './layouts/common-main';
+
+@import './layouts/main/main-visual';
+@import './layouts/main/about-kinfolk';
+@import './layouts/main/our-shop';
+@import './layouts/main/contact';
+@import './layouts/main/current-issue';
+@import './layouts/main/audio';
+@import './layouts/main/newsletter';

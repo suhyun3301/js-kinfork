@@ -1,0 +1,46 @@
+.about-kinfolk {
+  .member-box {
+    margin-top: 80px;
+
+    .title {
+      @include flex-box;
+      margin-bottom: 24px;
+      font: 400 32px/1.2 $serif;
+      font-style: italic;
+      text-transform: lowercase;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        margin-left: 12px;
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    .member-item {
+      @include flex-box($jc: between);
+      width: 100%;
+      margin-bottom: 32px;
+
+      .member-info {
+        dt {
+          font: 400 12px/1 $sans-serif;
+          margin-bottom: 6px;
+        }
+
+        dd {
+          font: 400 18px/1 $serif;
+        }
+      }
+
+      .btn-more {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

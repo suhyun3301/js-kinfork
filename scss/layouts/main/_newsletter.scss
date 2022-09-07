@@ -1,0 +1,40 @@
+.newsletter {
+  h1 {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .form-email {
+    @include flex-box($jc: between);
+    padding-bottom: 12px;
+    margin: 0 12px 20px;
+    border-bottom: 1px solid #000;
+
+    input[type='email'] {
+      font: 400 14px/1 $sans-serif;
+    }
+
+    button[type='submit'] {
+      font: 600 12px/1 $sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background-color: #000;
+      color: #fff;
+      border-radius: 100px;
+      padding: 8px 12px;
+    }
+  }
+
+  .form-checkbox {
+    text-align: center;
+
+    input[type='checkbox'] {
+      margin-right: 4px;
+    }
+
+    label {
+      font: 400 14px/1 $serif;
+      vertical-align: 2px;
+    }
+  }
+}
