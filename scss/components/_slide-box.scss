@@ -1,0 +1,9 @@
+.slide-box {
+  .slide-item {
+    width: 100%;
+
+    img {
+      @include object-fit;
+    }
+  }
+}

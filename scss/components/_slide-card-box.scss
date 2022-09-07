@@ -1,0 +1,9 @@
+.slide-card-list {
+  .slide-card-item {
+    width: 100%;
+
+    img {
+      @include object-fit;
+    }
+  }
+}
