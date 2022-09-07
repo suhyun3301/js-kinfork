@@ -10,4 +10,14 @@
 @import './mixins/absolute';
 
 @import './components/header';
+@import './components/footer';
+
 @import './layouts/main';
+
+body {
+  padding-bottom: 500px;
+
+  section {
+    margin-bottom: 200px;
+  }
+}
