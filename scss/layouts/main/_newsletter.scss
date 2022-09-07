@@ -37,4 +37,19 @@
       vertical-align: 2px;
     }
   }
+
+  @include responsive(D) {
+    .row {
+      justify-content: center;
+    }
+
+    h1 {
+      margin-bottom: 64px;
+    }
+
+    .form-checkbox {
+      text-align: left;
+      margin-left: 12px;
+    }
+  }
 }

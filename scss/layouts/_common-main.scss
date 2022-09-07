@@ -10,10 +10,14 @@
   }
 
   @include responsive(T) {
-    .title-box {
-      h1 {
-        font-size: 56px;
-      }
+    .title {
+      font-size: 56px;
+    }
+  }
+
+  @include responsive(D) {
+    .title {
+      font-size: 64px;
     }
   }
 }

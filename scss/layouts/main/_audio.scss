@@ -6,4 +6,10 @@
   .list-type-img {
     margin-bottom: 40px;
   }
+
+  @include responsive(D) {
+    .list-type-text {
+      margin-left: 32px;
+    }
+  }
 }

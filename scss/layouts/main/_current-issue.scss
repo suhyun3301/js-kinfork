@@ -65,4 +65,14 @@
       }
     }
   }
+
+  @include responsive(D) {
+    .category-box {
+      padding: 120px 60px;
+    }
+
+    .slide-box {
+      height: 550px;
+    }
+  }
 }

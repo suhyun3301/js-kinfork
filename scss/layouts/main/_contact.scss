@@ -31,4 +31,14 @@
       order: 2;
     }
   }
+
+  @include responsive(D) {
+    .title-box {
+      padding-left: 8%;
+    }
+
+    .img-box {
+      height: 550px;
+    }
+  }
 }
