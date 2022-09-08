@@ -3,7 +3,7 @@
     margin-top: 80px;
 
     .title {
-      @include flex-box;
+      @include flex-box($jc: start);
       margin-bottom: 24px;
       font: 400 32px/1.2 $serif;
       font-style: italic;
@@ -12,12 +12,13 @@
       &::after {
         content: '';
         display: inline-block;
-        width: 100%;
+        width: 0%;
         height: 1px;
         background-color: black;
         margin-left: 12px;
         position: relative;
         top: 5px;
+        transition: 0.5s;
       }
     }
 
@@ -57,6 +58,14 @@
 
     .member-box {
       margin-top: 0;
+    }
+  }
+}
+
+.about-kinfolk.on {
+  .title {
+    &::after {
+      width: 100%;
     }
   }
 }

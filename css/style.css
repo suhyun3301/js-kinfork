@@ -644,8 +644,8 @@ address {
   padding-top: 4px;
 }
 .list-type-img .item .info-box h3 {
-  font: 400 20px/1 "EB Garamond";
-  margin-bottom: 8px;
+  font: 400 20px/1.4 "EB Garamond";
+  margin-bottom: 2px;
 }
 .list-type-img .item .info-box p {
   font: 400 14px/1.4 "Open Sans";
@@ -664,7 +664,7 @@ address {
   }
   .list-type-img .item a .img-box {
     width: 100%;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
 }
 
@@ -781,9 +781,13 @@ address {
 .box .title {
   font: 400 48px/1.2 "EB Garamond";
   margin-bottom: 20px;
+  transform: translateX(-2%);
+  transition: 0.5s;
 }
 .box .title-desc {
   font: 400 15px/1.4 "Open Sans";
+  opacity: 0;
+  transition: 0.8s 0.3s;
 }
 @media screen and (min-width: 768px) {
   .box {
@@ -806,6 +810,13 @@ address {
     font-size: 16px;
     line-height: 1.6;
   }
+}
+
+.box.on .title {
+  transform: translateX(0);
+}
+.box.on .title-desc {
+  opacity: 1;
 }
 
 .main-visual {
@@ -861,7 +872,7 @@ address {
 }
 .about-kinfolk .member-box .title {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 24px;
   font: 400 32px/1.2 "EB Garamond";
@@ -871,12 +882,13 @@ address {
 .about-kinfolk .member-box .title::after {
   content: "";
   display: inline-block;
-  width: 100%;
+  width: 0%;
   height: 1px;
   background-color: black;
   margin-left: 12px;
   position: relative;
   top: 5px;
+  transition: 0.5s;
 }
 .about-kinfolk .member-box .member-item {
   display: flex;
@@ -906,6 +918,10 @@ address {
   .about-kinfolk .member-box {
     margin-top: 0;
   }
+}
+
+.about-kinfolk.on .title::after {
+  width: 100%;
 }
 
 .our-shop .title-box .title-desc {
