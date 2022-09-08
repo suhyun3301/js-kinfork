@@ -12,7 +12,7 @@
       height: 100%;
       .col-sm-4 {
         height: 100%;
-        @include flex-box($jc: end);
+        @include flex-box($jc: between);
       }
     }
   }
@@ -50,6 +50,14 @@
     background-color: #fff;
     height: 120px;
     transition: height 0.5s;
+
+    .container {
+      .row {
+        .col-sm-4 {
+          @include flex-box($jc: end);
+        }
+      }
+    }
 
     .logo {
       width: 70%;
@@ -97,6 +105,12 @@
 }
 
 .header.on {
+  background-color: #fff;
+
+  button {
+    color: #000;
+  }
+
   @include responsive(T) {
     height: 80px;
 

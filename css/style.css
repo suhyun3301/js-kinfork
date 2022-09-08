@@ -479,7 +479,7 @@ address {
 .header .container .row .col-sm-4 {
   height: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 .header .logo {
@@ -513,6 +513,11 @@ address {
     background-color: #fff;
     height: 120px;
     transition: height 0.5s;
+  }
+  .header .container .row .col-sm-4 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   .header .logo {
     width: 70%;
@@ -556,6 +561,12 @@ address {
   }
 }
 
+.header.on {
+  background-color: #fff;
+}
+.header.on button {
+  color: #000;
+}
 @media screen and (min-width: 768px) {
   .header.on {
     height: 80px;

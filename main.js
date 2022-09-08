@@ -10,8 +10,14 @@ window.addEventListener('scroll', () => {
 
   if (scrollValue >= 40) {
     header.classList.add('on')
+    header
+      .querySelector('.logo-white')
+      .setAttribute('src', './assets/logo_black.svg')
   } else {
     header.classList.remove('on')
+    header
+      .querySelector('.logo-white')
+      .setAttribute('src', './assets/logo_white.svg')
   }
 
   toggleOn(scrollValue)
