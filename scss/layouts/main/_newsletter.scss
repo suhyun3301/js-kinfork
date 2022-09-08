@@ -1,7 +1,5 @@
 .newsletter {
-  margin-bottom: 100px;
-
-  h1 {
+  .title-box {
     text-align: center;
     margin-bottom: 32px;
   }
@@ -40,13 +38,34 @@
     }
   }
 
+  @include responsive(T) {
+    .container {
+      .row {
+        justify-content: center;
+      }
+    }
+  }
+
   @include responsive(D) {
-    .row {
-      justify-content: center;
+    background-color: #e8e4d7;
+    padding: 120px 0;
+
+    .container {
+      .row {
+        justify-content: space-between;
+      }
     }
 
-    h1 {
-      margin-bottom: 64px;
+    .title-box {
+      text-align: left;
+
+      .title {
+        font-size: 56px;
+      }
+    }
+
+    .form-email {
+      margin-top: 20px;
     }
 
     .form-checkbox {

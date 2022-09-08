@@ -1,8 +1,9 @@
 .box {
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 
   .title {
     font: 400 48px/1.2 $serif;
+    margin-bottom: 20px;
   }
 
   .title-desc {
@@ -10,14 +11,25 @@
   }
 
   @include responsive(T) {
+    margin-bottom: 180px;
+
     .title {
       font-size: 56px;
+      margin-bottom: 32px;
     }
   }
 
   @include responsive(D) {
+    margin-bottom: 240px;
+
     .title {
-      font-size: 64px;
+      font-size: 72px;
+      margin-bottom: 48px;
+    }
+
+    .title-desc {
+      font-size: 16px;
+      line-height: 1.6;
     }
   }
 }

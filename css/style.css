@@ -32,11 +32,6 @@ main {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 /* Grouping content
    ========================================================================== */
 /**
@@ -481,10 +476,18 @@ address {
   align-items: center;
 }
 .header .logo {
-  flex-grow: 1;
+  width: 120px;
   text-transform: uppercase;
   font: 400 24px/1 "EB Garamond";
-  color: #fff;
+}
+.header .logo-white {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.header .logo-black {
+  display: none;
 }
 .header button {
   color: #fff;
@@ -495,43 +498,123 @@ address {
   margin-right: 16px;
 }
 .header button.btn-menu {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  top: 1px;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    background-color: #fff;
+    height: 120px;
+  }
+  .header .col-sm-4 {
+    justify-content: flex-end;
+  }
+  .header .logo {
+    width: 70%;
+    max-width: 900px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60%;
+  }
+  .header .logo-white {
+    display: none;
+  }
+  .header .logo-black {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .header button {
+    color: #000;
+  }
+  .header button.btn-search {
+    width: 27px;
+    height: 27px;
+    margin-right: 12px;
+  }
+  .header button.btn-menu {
+    width: 32px;
+    height: 32px;
+    top: 2px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    height: 160px;
+  }
 }
 
-.footer {
+.footer-mo-box {
   border-top: 3px solid #000;
   padding: 12px 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.footer-legal li {
+.footer-mo-box .footer-legal li {
   font: 400 14px/1 "Open Sans";
   margin-bottom: 6px;
 }
-.footer-legal li:first-child {
+.footer-mo-box .footer-legal li:first-child {
   font: 600 12px/1 "Open Sans";
   margin-bottom: 12px;
 }
-.footer-social-item {
+.footer-mo-box .footer-social-item {
   margin-bottom: 8px;
 }
-.footer-social-item:last-child {
+.footer-mo-box .footer-social-item:last-child {
   margin-bottom: 0;
 }
-.footer-social-link {
+.footer-mo-box .footer-social-link {
   display: block;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 }
-.footer-social-link span {
+.footer-mo-box .footer-social-link span {
   font: 400 18px/1 "EB Garamond";
 }
-.footer-social-link svg {
+.footer-mo-box .footer-social-link svg {
   width: 16px;
   height: 16px;
+}
+@media screen and (min-width: 1200px) {
+  .footer-mo {
+    display: none;
+  }
+}
+
+.footer-pc {
+  display: none;
+}
+.footer-pc .footer-menu-box {
+  border-top: 4px solid #000;
+  padding: 24px 0 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+.footer-pc .footer-menu-box .copyright {
+  display: inline-block;
+  width: 60%;
+  font: 400 14px/1 "Open Sans";
+}
+.footer-pc .footer-menu-box .footer-menu strong {
+  font: 400 20px/2 "EB Garamond";
+  text-transform: capitalize;
+}
+.footer-pc .footer-menu-box .footer-menu ul li {
+  font: 400 15px/2 "Open Sans";
+}
+@media screen and (min-width: 1200px) {
+  .footer-pc {
+    display: block;
+  }
 }
 
 .list-type-img .item {
@@ -598,7 +681,7 @@ address {
   border-bottom: 1px solid #000;
   padding-bottom: 8px;
 }
-.list-type-text .item .title {
+.list-type-text .item .content-title {
   font: 400 20px/1 "EB Garamond";
 }
 .list-type-text .item .btn-more {
@@ -693,35 +776,49 @@ address {
 }
 
 .box {
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 .box .title {
   font: 400 48px/1.2 "EB Garamond";
+  margin-bottom: 20px;
 }
 .box .title-desc {
   font: 400 15px/1.4 "Open Sans";
 }
 @media screen and (min-width: 768px) {
+  .box {
+    margin-bottom: 180px;
+  }
   .box .title {
     font-size: 56px;
+    margin-bottom: 32px;
   }
 }
 @media screen and (min-width: 1200px) {
+  .box {
+    margin-bottom: 240px;
+  }
   .box .title {
-    font-size: 64px;
+    font-size: 72px;
+    margin-bottom: 48px;
+  }
+  .box .title-desc {
+    font-size: 16px;
+    line-height: 1.6;
   }
 }
 
 .main-visual {
   position: relative;
-  height: 100vh;
-  margin-bottom: 48px;
+  height: 800px;
+  margin-bottom: 80px;
 }
 .main-visual .text-box {
   position: absolute;
-  bottom: 20%;
+  bottom: 11%;
   left: 20px;
   color: #fff;
+  width: 80%;
 }
 .main-visual .text-box h2 {
   font: 600 16px/1 "Open Sans";
@@ -744,8 +841,15 @@ address {
   display: none;
 }
 @media screen and (min-width: 768px) {
+  .main-visual {
+    height: 1000px;
+    margin-bottom: 120px;
+  }
   .main-visual .text-box {
-    left: 8%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
   .main-visual .text-box p {
     font-size: 72px;
@@ -804,7 +908,7 @@ address {
   }
 }
 
-.our-shop .title-box p {
+.our-shop .title-box .title-desc {
   margin-bottom: 40px;
 }
 .our-shop .slide-card-box .controls {
@@ -816,8 +920,11 @@ address {
 @media screen and (min-width: 1200px) {
   .our-shop {
     width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .our-shop .title-box .title-desc {
+    width: 70%;
   }
 }
 
@@ -827,7 +934,7 @@ address {
 }
 .contact .title-box {
   width: 100%;
-  padding: 24px 16px 64px;
+  padding: 40px 20px 56px;
   background-color: #e4d9c5;
   order: 2;
 }
@@ -841,8 +948,9 @@ address {
 @media screen and (min-width: 768px) {
   .contact .title-box {
     width: 50%;
-    padding: 24px 40px 64px;
     order: 1;
+    padding-top: 64px;
+    padding-left: 6%;
   }
   .contact .img-box {
     width: 50%;
@@ -851,7 +959,12 @@ address {
 }
 @media screen and (min-width: 1200px) {
   .contact .title-box {
-    padding-left: 8%;
+    padding-top: 80px;
+  }
+  .contact .title-box .inner {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-120%);
   }
   .contact .title-box p {
     width: 50%;
@@ -865,12 +978,12 @@ address {
   }
 }
 
+.current-issue .title-box {
+  margin-bottom: 40px;
+}
 .current-issue .title-box h2 {
   font: 400 24px/1 "EB Garamond";
   margin-bottom: 12px;
-}
-.current-issue .title-box .title-desc {
-  margin-bottom: 40px;
 }
 .current-issue .img-box {
   width: 100%;
@@ -881,8 +994,7 @@ address {
   background-position: center;
 }
 .current-issue .category-box {
-  background-color: #e4d9c5;
-  padding: 32px 32px 40px;
+  padding: 32px 0px;
 }
 .current-issue .category-box h2 {
   font: 400 28px/1 "EB Garamond";
@@ -912,24 +1024,27 @@ address {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  margin-top: 200px;
+  margin-top: 120px;
 }
 @media screen and (min-width: 768px) {
+  .current-issue .title-box {
+    margin-bottom: 80px;
+  }
   .current-issue .img-box {
     height: 100%;
   }
   .current-issue .category-box {
     margin-left: -20px;
     height: 100%;
-    padding: 64px 40px;
+    padding: 0 0 160px 36px;
   }
-  .current-issue .category-box h2 {
-    margin-bottom: 32px;
+  .current-issue .banner {
+    margin-top: 200px;
   }
 }
 @media screen and (min-width: 1200px) {
   .current-issue .category-box {
-    padding: 120px 60px;
+    padding: 0 0 240px 40px;
   }
 }
 
@@ -945,10 +1060,7 @@ address {
   }
 }
 
-.newsletter {
-  margin-bottom: 100px;
-}
-.newsletter h1 {
+.newsletter .title-box {
   text-align: center;
   margin-bottom: 32px;
 }
@@ -982,12 +1094,27 @@ address {
   font: 400 14px/1 "EB Garamond";
   vertical-align: 2px;
 }
-@media screen and (min-width: 1200px) {
-  .newsletter .row {
+@media screen and (min-width: 768px) {
+  .newsletter .container .row {
     justify-content: center;
   }
-  .newsletter h1 {
-    margin-bottom: 64px;
+}
+@media screen and (min-width: 1200px) {
+  .newsletter {
+    background-color: #e8e4d7;
+    padding: 120px 0;
+  }
+  .newsletter .container .row {
+    justify-content: space-between;
+  }
+  .newsletter .title-box {
+    text-align: left;
+  }
+  .newsletter .title-box .title {
+    font-size: 56px;
+  }
+  .newsletter .form-email {
+    margin-top: 20px;
   }
   .newsletter .form-checkbox {
     text-align: left;

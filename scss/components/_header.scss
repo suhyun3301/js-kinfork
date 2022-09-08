@@ -11,10 +11,17 @@
   }
 
   .logo {
-    flex-grow: 1;
+    width: 120px;
     text-transform: uppercase;
     font: 400 24px/1 $serif;
-    color: #fff;
+
+    &-white {
+      @include object-fit;
+    }
+
+    &-black {
+      display: none;
+    }
   }
 
   button {
@@ -27,8 +34,54 @@
     }
 
     &.btn-menu {
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
+      position: relative;
+      top: 1px;
     }
+  }
+
+  @include responsive(T) {
+    background-color: #fff;
+    height: 120px;
+
+    .col-sm-4 {
+      justify-content: flex-end;
+    }
+
+    .logo {
+      width: 70%;
+      max-width: 900px;
+      @include absolute-center-X;
+      top: 60%;
+
+      &-white {
+        display: none;
+      }
+
+      &-black {
+        @include object-fit;
+      }
+    }
+
+    button {
+      color: #000;
+
+      &.btn-search {
+        width: 27px;
+        height: 27px;
+        margin-right: 12px;
+      }
+
+      &.btn-menu {
+        width: 32px;
+        height: 32px;
+        top: 2px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    height: 160px;
   }
 }
