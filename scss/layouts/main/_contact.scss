@@ -11,12 +11,15 @@
 
   .img-box {
     width: 100%;
-    height: 480px;
-    background-image: url('https://www.kinfolk.com/wp-content/uploads/2020/07/AtHomeWithKinfolk_web_01-768x1024.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
     order: 1;
+
+    .slide-box {
+      .slide-list {
+        .slide-item {
+          height: 480px;
+        }
+      }
+    }
   }
 
   @include responsive(T) {
@@ -35,10 +38,23 @@
   @include responsive(D) {
     .title-box {
       padding-left: 8%;
+
+      p {
+        width: 50%;
+        font-size: 18px;
+      }
     }
 
     .img-box {
-      height: 550px;
+      height: 600px;
+
+      .slide-box {
+        .slide-list {
+          .slide-item {
+            height: 600px;
+          }
+        }
+      }
     }
   }
 }

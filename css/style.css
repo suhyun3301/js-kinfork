@@ -552,6 +552,7 @@ address {
   width: 30%;
 }
 .list-type-img .item .img-box img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -605,27 +606,90 @@ address {
   height: 24px;
 }
 
-.slide-card-list .slide-card-item {
-  width: 100%;
+.slide-card-box .controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0 8px;
 }
-.slide-card-list .slide-card-item img {
+.slide-card-box .controls button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.slide-card-box .controls button svg {
+  width: 18px;
+  height: 18px;
+}
+.slide-card-box .slide-card-list .slide-card-item {
+  width: 100%;
+  position: relative;
+}
+.slide-card-box .slide-card-list .slide-card-item img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin-bottom: 8px;
+}
+.slide-card-box .slide-card-list .slide-card-title {
+  font: 400 15px/1 "Open Sans";
+}
+.slide-card-box .slide-card-list .slide-card-num {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  display: block;
+  font: 400 12px/1 "Open Sans";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 50%;
 }
 
+.slide-box {
+  position: relative;
+}
 .slide-box .slide-list {
   width: 100%;
   height: 100%;
 }
 .slide-box .slide-item {
   width: 100%;
-  height: 100%;
 }
 .slide-box .slide-item img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.slide-box .slide-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 0 12px;
+  bottom: 20px;
+}
+.slide-box .slide-carousel li {
+  width: 8px;
+  height: 8px;
+  font-size: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.slide-box .slide-carousel li.tns-nav-active {
+  opacity: 1;
 }
 
 .box {
@@ -671,6 +735,7 @@ address {
   height: 100%;
 }
 .main-visual .container-video video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -742,6 +807,19 @@ address {
 .our-shop .title-box p {
   margin-bottom: 40px;
 }
+.our-shop .slide-card-box .controls {
+  padding-right: 20px;
+}
+.our-shop .slide-card-box .slide-card-list .slide-card-item img {
+  height: 450px;
+}
+@media screen and (min-width: 1200px) {
+  .our-shop {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+  }
+}
 
 .contact {
   display: flex;
@@ -755,12 +833,10 @@ address {
 }
 .contact .img-box {
   width: 100%;
-  height: 480px;
-  background-image: url("https://www.kinfolk.com/wp-content/uploads/2020/07/AtHomeWithKinfolk_web_01-768x1024.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
   order: 1;
+}
+.contact .img-box .slide-box .slide-list .slide-item {
+  height: 480px;
 }
 @media screen and (min-width: 768px) {
   .contact .title-box {
@@ -777,8 +853,15 @@ address {
   .contact .title-box {
     padding-left: 8%;
   }
+  .contact .title-box p {
+    width: 50%;
+    font-size: 18px;
+  }
   .contact .img-box {
-    height: 550px;
+    height: 600px;
+  }
+  .contact .img-box .slide-box .slide-list .slide-item {
+    height: 600px;
   }
 }
 
@@ -821,8 +904,15 @@ address {
   font: 400 18px/1 "EB Garamond";
   text-transform: capitalize;
 }
-.current-issue .slide-box {
-  margin-top: 120px;
+.current-issue .banner {
+  width: 100%;
+  height: 500px;
+  background-image: url("https://www.kinfolk.com/wp-content/uploads/2022/05/Under_the_Sun_01-2048x1365.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: 200px;
 }
 @media screen and (min-width: 768px) {
   .current-issue .img-box {
@@ -841,9 +931,6 @@ address {
   .current-issue .category-box {
     padding: 120px 60px;
   }
-  .current-issue .slide-box {
-    height: 550px;
-  }
 }
 
 .audio .title-box {
@@ -858,6 +945,9 @@ address {
   }
 }
 
+.newsletter {
+  margin-bottom: 100px;
+}
 .newsletter h1 {
   text-align: center;
   margin-bottom: 32px;

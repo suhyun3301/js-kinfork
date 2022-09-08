@@ -4,4 +4,24 @@
       margin-bottom: 40px;
     }
   }
+
+  .slide-card-box {
+    .controls {
+      padding-right: 20px;
+    }
+
+    .slide-card-list {
+      .slide-card-item {
+        img {
+          height: 450px;
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+  }
 }

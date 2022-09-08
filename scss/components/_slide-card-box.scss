@@ -1,9 +1,48 @@
-.slide-card-list {
-  .slide-card-item {
-    width: 100%;
+.slide-card-box {
+  .controls {
+    @include flex-box($jc: end);
+    gap: 0 8px;
 
-    img {
-      @include object-fit;
+    button {
+      @include flex-box;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #000;
+      border-radius: 50%;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  .slide-card-list {
+    .slide-card-item {
+      width: 100%;
+      position: relative;
+
+      img {
+        @include object-fit;
+        margin-bottom: 8px;
+      }
+    }
+
+    .slide-card-title {
+      font: 400 15px/1 $sans-serif;
+    }
+
+    .slide-card-num {
+      position: absolute;
+      top: 20px;
+      left: 16px;
+      display: block;
+      font: 400 12px/1 $sans-serif;
+      width: 24px;
+      height: 24px;
+      @include flex-box;
+      border: 1px solid #000;
+      border-radius: 50%;
     }
   }
 }
