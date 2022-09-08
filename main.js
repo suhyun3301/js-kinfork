@@ -7,19 +7,7 @@ getSectionTop()
 
 window.addEventListener('scroll', () => {
   let scrollValue = window.pageYOffset
-
-  if (scrollValue >= 40) {
-    header.classList.add('on')
-    header
-      .querySelector('.logo-white')
-      .setAttribute('src', './assets/logo_black.svg')
-  } else {
-    header.classList.remove('on')
-    header
-      .querySelector('.logo-white')
-      .setAttribute('src', './assets/logo_white.svg')
-  }
-
+  toggleOnHeader(scrollValue)
   toggleOn(scrollValue)
 })
 
@@ -33,6 +21,8 @@ function getSectionTop() {
 }
 
 function toggleOn(scrollValue) {
+  const last = sections.length - 1
+
   sections.forEach((section, i) => {
     section.classList.remove('on')
 
@@ -40,4 +30,18 @@ function toggleOn(scrollValue) {
       sections[i].classList.add('on')
     }
   })
+}
+
+function toggleOnHeader(scrollValue) {
+  if (scrollValue >= 40) {
+    header.classList.add('on')
+    header
+      .querySelector('.logo-white')
+      .setAttribute('src', './assets/logo_black.svg')
+  } else {
+    header.classList.remove('on')
+    header
+      .querySelector('.logo-white')
+      .setAttribute('src', './assets/logo_white.svg')
+  }
 }

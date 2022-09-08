@@ -6,9 +6,10 @@
 
   .form-email {
     @include flex-box($jc: between);
-    padding-bottom: 12px;
+    position: relative;
     margin: 0 12px 20px;
     border-bottom: 1px solid #000;
+    padding-bottom: 12px;
 
     input[type='email'] {
       font: 400 14px/1 $sans-serif;
