@@ -8,6 +8,16 @@
   }
 
   @include responsive(D) {
+    .list-type-img {
+      .item {
+        .info-box {
+          h3 {
+            @include line-clamp(1);
+          }
+        }
+      }
+    }
+
     .list-type-text {
       margin-left: 32px;
     }

@@ -648,7 +648,7 @@ address {
   margin-bottom: 8px;
 }
 .list-type-img .item .info-box p {
-  font: 400 14px/1 "Open Sans";
+  font: 400 14px/1.4 "Open Sans";
 }
 @media screen and (min-width: 768px) {
   .list-type-img {
@@ -1055,6 +1055,14 @@ address {
   margin-bottom: 40px;
 }
 @media screen and (min-width: 1200px) {
+  .audio .list-type-img .item .info-box h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
   .audio .list-type-text {
     margin-left: 32px;
   }
