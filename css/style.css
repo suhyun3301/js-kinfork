@@ -470,15 +470,20 @@ address {
   z-index: 1;
   padding: 10px 0;
 }
-.header .col-sm-4 {
+.header .container {
+  height: 100%;
+}
+.header .container .row {
+  height: 100%;
+}
+.header .container .row .col-sm-4 {
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 .header .logo {
   width: 120px;
-  text-transform: uppercase;
-  font: 400 24px/1 "EB Garamond";
 }
 .header .logo-white {
   display: block;
@@ -507,17 +512,16 @@ address {
   .header {
     background-color: #fff;
     height: 120px;
-  }
-  .header .col-sm-4 {
-    justify-content: flex-end;
+    transition: height 0.5s;
   }
   .header .logo {
     width: 70%;
     max-width: 900px;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    top: 60%;
+    transform: translateX(-50%) scale(1);
+    top: 64%;
+    transition: transform 0.3s;
   }
   .header .logo-white {
     display: none;
@@ -528,15 +532,19 @@ address {
     height: 100%;
     object-fit: cover;
   }
-  .header button {
+  .header .btn-box {
+    position: relative;
+    top: -20px;
+  }
+  .header .btn-box button {
     color: #000;
   }
-  .header button.btn-search {
+  .header .btn-box button.btn-search {
     width: 27px;
     height: 27px;
     margin-right: 12px;
   }
-  .header button.btn-menu {
+  .header .btn-box button.btn-menu {
     width: 32px;
     height: 32px;
     top: 2px;
@@ -545,6 +553,24 @@ address {
 @media screen and (min-width: 1200px) {
   .header {
     height: 160px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header.on {
+    height: 80px;
+  }
+  .header.on .logo {
+    transform: translateX(-50%) scale(0.3);
+    top: auto;
+  }
+  .header.on .btn-box {
+    top: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header.on .logo {
+    transform: translateX(-50%) scale(0.2);
   }
 }
 

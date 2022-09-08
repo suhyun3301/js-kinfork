@@ -6,14 +6,19 @@
   z-index: $header-level;
   padding: 10px 0;
 
-  .col-sm-4 {
-    @include flex-box($jc: between);
+  .container {
+    height: 100%;
+    .row {
+      height: 100%;
+      .col-sm-4 {
+        height: 100%;
+        @include flex-box($jc: end);
+      }
+    }
   }
 
   .logo {
     width: 120px;
-    text-transform: uppercase;
-    font: 400 24px/1 $serif;
 
     &-white {
       @include object-fit;
@@ -44,16 +49,16 @@
   @include responsive(T) {
     background-color: #fff;
     height: 120px;
-
-    .col-sm-4 {
-      justify-content: flex-end;
-    }
+    transition: height 0.5s;
 
     .logo {
       width: 70%;
       max-width: 900px;
-      @include absolute-center-X;
-      top: 60%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scale(1);
+      top: 64%;
+      transition: transform 0.3s;
 
       &-white {
         display: none;
@@ -64,24 +69,50 @@
       }
     }
 
-    button {
-      color: #000;
+    .btn-box {
+      position: relative;
+      top: -20px;
 
-      &.btn-search {
-        width: 27px;
-        height: 27px;
-        margin-right: 12px;
-      }
+      button {
+        color: #000;
 
-      &.btn-menu {
-        width: 32px;
-        height: 32px;
-        top: 2px;
+        &.btn-search {
+          width: 27px;
+          height: 27px;
+          margin-right: 12px;
+        }
+
+        &.btn-menu {
+          width: 32px;
+          height: 32px;
+          top: 2px;
+        }
       }
     }
   }
 
   @include responsive(D) {
     height: 160px;
+  }
+}
+
+.header.on {
+  @include responsive(T) {
+    height: 80px;
+
+    .logo {
+      transform: translateX(-50%) scale(0.3);
+      top: auto;
+    }
+
+    .btn-box {
+      top: auto;
+    }
+  }
+
+  @include responsive(D) {
+    .logo {
+      transform: translateX(-50%) scale(0.2);
+    }
   }
 }

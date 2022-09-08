@@ -1,3 +1,4 @@
+const header = document.querySelector('.header')
 const sections = document.querySelectorAll('.box')
 const POSITION = 800
 let sectionsTop = []
@@ -6,6 +7,13 @@ getSectionTop()
 
 window.addEventListener('scroll', () => {
   let scrollValue = window.pageYOffset
+
+  if (scrollValue >= 40) {
+    header.classList.add('on')
+  } else {
+    header.classList.remove('on')
+  }
+
   toggleOn(scrollValue)
 })
 
